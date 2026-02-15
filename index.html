@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHENKIN | Огненная Мощь ПК</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: rgba(20, 20, 20, 0.8);
+            --fire: #ff4500;
+            --fire-grad: linear-gradient(45deg, #ff4500, #ff8c00);
+            --green: #00ff88;
+            --red: #ff3e3e;
+            --yellow: #ffcc00;
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+        
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Анимированный фон */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), 
+                        url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 7rem);
+            margin: 0;
+            letter-spacing: 15px;
+            background: var(--fire-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(255, 69, 0, 0.5));
+        }
+
+        .hero p { font-size: 1.5rem; color: #aaa; margin: 20px 0; }
+
+        /* Сетка категорий */
+        .container { padding: 80px 5%; max-width: 1400px; margin: auto; }
+        
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 3rem; text-transform: uppercase; }
+        .section-header div { width: 100px; height: 4px; background: var(--fire); margin: 10px auto; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid #333;
+            border-radius: 25px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: var(--fire); }
+
+        .card i { font-size: 3rem; margin-bottom: 20px; }
+        .c-green { color: var(--green); }
+        .c-red { color: var(--red); }
+        .c-yellow { color: var(--yellow); }
+
+        .price-tag { font-size: 2.5rem; font-weight: 800; margin: 20px 0; }
+
+        /* Кнопки */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 20px;
+            background: var(--fire-grad);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(255, 69, 0, 0.3);
+        }
+
+        .btn:hover { filter: brightness(1.2); letter-spacing: 2px; }
+
+        /* Отзывы */
+        .review-box {
+            background: #111;
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid var(--fire);
+            margin-bottom: 20px;
+        }
+
+        /* Подвал */
+        footer {
+            background: #000;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .contact-link { color: var(--fire); font-size: 1.8rem; text-decoration: none; display: block; margin: 20px 0; }
+
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <div style="text-transform: uppercase; letter-spacing: 5px; color: var(--fire);">Tashkent Computer Lab</div>
+    <h1>CHENKIN</h1>
+    <p>Сборка ПК, которые меняют реальность</p>
+    <a href="#store" class="btn" style="width: auto; padding: 20px 60px;">В БОЙ <i class="fas fa-bolt"></i></a>
+</section>
+
+<div class="container" id="store">
+    <div class="section-header">
+        <h2>Наши Арсеналы</h2>
+        <div></div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-gamepad c-green"></i>
+            <h3 class="c-green">GAME ZONE</h3>
+            <p>Оптимальные сборки для киберспорта. Выжми максимум FPS из своего бюджета.</p>
+            <div class="price-tag">$480 - $900</div>
+            <ul style="list-style: none; padding: 0; color: #888;">
+                <li><i class="fas fa-check"></i> Тесты в 2K/4K</li>
+                <li><i class="fas fa-check"></i> Кабель-менеджмент</li>
+            </ul>
+            <a href="https://t.me/parcelsms" class="btn">Заказать Сборку</a>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-dragon c-red"></i>
+            <h3 class="c-red">ELITE POWER</h3>
+            <p>Бескомпромиссные станции для рендеринга, 3D и Ultra-гейминга.</p>
+            <div class="price-tag">$1500 - $5000</div>
+            <ul style="list-style: none; padding: 0; color: #888;">
+                <li><i class="fas fa-check"></i> Кастомное охлаждение</li>
+                <li><i class="fas fa-check"></i> Разгон системы (OC)</li>
+            </ul>
+            <a href="https://t.me/parcelsms" class="btn">Собрать Монстра</a>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-tools c-yellow"></i>
+            <h3 class="c-yellow">TECH SERVICE</h3>
+            <p>Второе дыхание для вашего ноутбука или ПК. Чистка, замена комплектующих.</p>
+            <div class="price-tag">Express</div>
+            <ul style="list-style: none; padding: 0; color: #888;">
+                <li><i class="fas fa-check"></i> Термопаста Arctic MX-6</li>
+                <li><i class="fas fa-check"></i> Чистка от пыли</li>
+            </ul>
+            <a href="https://t.me/parcelsms" class="btn">Записаться</a>
+        </div>
+    </div>
+</div>
+
+<section class="reviews" style="padding: 100px 5%;">
+    <div class="section-header">
+        <h2>Слова клиентов</h2>
+        <div></div>
+    </div>
+    <div class="grid">
+        <div class="review-box">
+            <p>"Юрий — мастер своего дела. Собрал комп за 2 дня, кабели уложены идеально. Всё летает!"</p>
+            <strong>— Сардор (IT-разработчик)</strong>
+        </div>
+        <div class="review-box">
+            <p>"Привезла шумный ноутбук, через час забрала как новый. Спасибо за честный сервис!"</p>
+            <strong>— Елена</strong>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div style="font-size: 2rem; font-weight: 900; letter-spacing: 5px; margin-bottom: 20px;">CHENKIN</div>
+    <p>Юрий Викторович | Ташкент 2026</p>
+    <a href="https://t.me/parcelsms" class="contact-link">@parcelsms</a>
+    <p style="color: #444;">Звонки: +998 90 001-33-01</p>
+</footer>
+
+</body>
+</html>
